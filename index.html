@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="button">
+            <span class="btn active" onclick="document.getElementById('text').style.fontSize = '1em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '3em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '5em'">A</span>
+        </div>
+        <div class="content" id="text">
+            <h2>Change Font Size</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus risus nec magna semper, tincidunt ultricies nisi auctor. 
+                Vestibulum luctus ac elit in laoreet. Nam sit amet rutrum turpis, ac tempus elit. Mauris vestibulum ante in est tincidunt, eu bibendum diam venenatis. 
+                Donec ut viverra odio. Aliquam laoreet pretium dolor in ultricies. Maecenas sagittis turpis sollicitudin est dictum faucibus. Praesent venenatis turpis lorem, id 
+                laoreet mauris accumsan at. Donec luctus lobortis tellus.
+            </p>
+        </div>
+    </div>
+    <!-- Add Active Class in Selected Item -->
+    <script>
+        let buttons = document.querySelector('.button');
+        let btn = buttons.querySelectorAll('.btn');
+        for (var i = 0; i <btn.length; i++){
+            btn[i].addEventListener('click',function(){
+                let current = document.getElementById('active');
+                current[0].className = current[0].className.replace("active", "");
+                this.className += " active";
+            })
+        }
+    </script>
+</body>
+</html>
